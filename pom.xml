@@ -9,7 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>struts2 Maven Webapp</name>
+  <name>CZ3002_Assignment_2 Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -26,7 +26,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+	<dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-core</artifactId>
       <version>2.5.26</version>
@@ -42,11 +42,11 @@
       <version>2.14.1</version>
     </dependency>
     <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.1.0</version>
-    <scope>provided</scope>
-</dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+	</dependency>
   </dependencies>
 
   <build>
@@ -88,7 +88,7 @@
             <version>9.4.7.v20170914</version>
             <configuration>
                 <webApp>
-                    <contextPath>/${build.finalName}</contextPath>
+                    <contextPath>/${project.build.finalName}</contextPath>
                 </webApp>
                 <stopKey>CTRL+C</stopKey>
                 <stopPort>8999</stopPort>

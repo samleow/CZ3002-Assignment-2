@@ -4,10 +4,11 @@
 <html>
 <body>
 <h2>Login</h2>
-<s:form action="register" method="post">
+<p><s:property value="message" /></p>
+<s:form action="login">
       <s:textfield name="user.username" label="Username: " />
-      <s:password name="user.passsword" label="Password: " />
+      <s:password name="user.password" label="Password: " />
       <s:submit/>
-</s:form>	
+</s:form>
 </body>
 </html>
