@@ -1,4 +1,4 @@
-package struts.action;
+package struts.model;
 import java.sql.*;
 
 public class DatabaseAccess {
