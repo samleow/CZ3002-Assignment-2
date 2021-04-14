@@ -3,11 +3,17 @@ import java.sql.*;
 
 public class DatabaseAccess {
 	
+	// Database name and login credentials
+	private static String _databaseName =		"user";
+	private static String _databaseUsername =	"root";
+	private static String _databasePassword =	"P@ssw0rd!";
+	
 	public static boolean verifyFromDatabase(String username, String password)
 	{
 		try 
 		{
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "P@ssw0rd!");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + _databaseName, _databaseUsername, _databasePassword);
 			Statement statement = connection.createStatement();
 			String command = "select * from users where username = '" + username + "'";
 			ResultSet result = statement.executeQuery(command);
@@ -24,6 +30,10 @@ public class DatabaseAccess {
 			return false;
 		}
 		catch(SQLException ex) {
+	        ex.printStackTrace();
+	        return false;
+	    }
+		catch(Exception ex) {
 	        ex.printStackTrace();
 	        return false;
 	    }
